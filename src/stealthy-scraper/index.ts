@@ -8,7 +8,7 @@ import { SafeTypeOptions, Scraper, ScraperOptions } from './types'
 import { loop, wait } from './helpers'
 
 const AVERAGE_TYPING_CHARS_PER_MIN = 200
-const TYPING_CHARS_PER_MIN_VARIATION = 40
+const TYPING_CHARS_PER_MIN_VARIATION = 100
 
 const safeType = async (el: ElementHandle, text: string, options?: SafeTypeOptions) => {
   if (options?.clickFirst ?? true)
@@ -19,12 +19,12 @@ const safeType = async (el: ElementHandle, text: string, options?: SafeTypeOptio
 
   loop((next, stop, i) => {
     const char = text.charAt(i) as KeyInput
-    if (char == null) {
+    if (char == null || char.length < 1) {
       stop()
       return
     }
-    el.press(text.charAt(i) as KeyInput).then(() => {
-      // 200ms +/- 40ms
+    el.press(char).then(() => {
+      // 200ms +/- 100ms
       const delayMs = AVERAGE_TYPING_CHARS_PER_MIN + (TYPING_CHARS_PER_MIN_VARIATION * ((2 * Math.random()) - 1))
       next(delayMs)
     })
