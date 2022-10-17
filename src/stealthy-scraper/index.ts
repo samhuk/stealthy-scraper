@@ -15,7 +15,7 @@ const safeType = async (el: ElementHandle, text: string, options?: SafeTypeOptio
     await el.click()
 
   if (options?.waitBeforeS == null || options.waitBeforeS > 0)
-    await wait(options.waitBeforeS ?? 1)
+    await wait(options?.waitBeforeS ?? 1)
 
   loop((next, stop, i) => {
     const char = text.charAt(i) as KeyInput
@@ -44,7 +44,7 @@ export const createScraper = async (options?: ScraperOptions): Promise<Scraper> 
     page: initialPage,
     newBrowser: async (newUrl, newOptions) => {
       await scraper.browser.close()
-      scraper.browser = await puppeteer.launch(newOptions ?? options.puppeteerOptions)
+      scraper.browser = await puppeteer.launch(newOptions ?? options?.puppeteerOptions)
       scraper.page = await scraper.browser.newPage()
       await scraper.page.goto(newUrl)
     },
