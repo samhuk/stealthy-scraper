@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.json",
+  "include": ["./src/index.ts"],
+  "compilerOptions": {
+    "declaration": true,
+    "sourceMap": true,
+    "noEmit": false,
+    "outDir": "./dist"
+  }
+}

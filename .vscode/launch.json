@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "name": "Run Unit Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}\\node_modules\\jest\\bin\\jest.js",
+      "args": [
+          "--runInBand",
+          "--no-cache"
+      ],
+      "preLaunchTask": "unitTestsDebugPreLaunchTask"
+    },
+    {
+      "name": "Run Integration Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "./build-integration-test/integrationTests/index.js",
+      "args": [
+          "--runInBand",
+          "--no-cache"
+      ],
+      "env": {
+        "DATABASE_NAME": "ts-pg-orm-integration-tests",
+        "DATABASE_USER": "postgres",
+        "DATABASE_PASSWORD": "postgres",
+        "DATABASE_HOST": "localhost",
+        "DATABASE_PORT": "5432"
+      },
+      "preLaunchTask": "IntegrationTestsDebugPreLaunchTask"
+    },
+  ]
+}

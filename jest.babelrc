@@ -1,0 +1,6 @@
+// This is used for jest unit tests to make breakpoints not move.
+// Source: https://stackoverflow.com/questions/52191409
+{
+  "sourceMap": "inline",
+  "retainLines": true
+}

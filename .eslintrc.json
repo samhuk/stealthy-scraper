@@ -1,0 +1,78 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "ignorePatterns": [
+    "node_modules/**/*",
+    "build/**/*",
+    "build-test/**/*",
+    "dist**/*",
+    "package.lock.json",
+    "LICENSE",
+    "*.yaml",
+    "*.go",
+    "*.sh",
+    "*.md",
+    "*.sql",
+    "*.json",
+    "*.scss",
+    "*.html",
+    "*.ico",
+    "*.ttf",
+    "*.woff2",
+    "*.txt",
+    "*.env",
+    "*.md",
+    "*.bat"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".js"]
+      }
+    }
+  },
+  "rules": {
+    "semi": [2, "never"],
+    "prefer-destructuring": "off",
+    "import/extensions": "off",
+    "radix": "off",
+    "object-curly-newline": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "nonblock-statement-body-position": ["error", "any"],
+    "curly": ["error", "multi-or-nest", "consistent"],
+    "max-len": ["error", { "code": 150, "ignoreTemplateLiterals": true }],
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "arrow-parens": [2, "as-needed"],
+    "no-return-assign": [0],
+    "brace-style": [2, "stroustrup"],
+    "no-underscore-dangle": [0],
+    "no-nested-ternary": [0],
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "class-methods-use-this": "off",
+    "no-useless-constructor": "off",
+    "no-empty-function": "off",
+    "lines-between-class-members": "off",
+    "no-param-reassign": "warn",
+    "object-shorthand": ["error", "properties"],
+    "space-before-function-paren": "off"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.json",
+  "include": [
+    "./src/integrationTests/**/*"
+  ],
+  "compilerOptions": {
+    "declaration": false,
+    "sourceMap": true,
+    "noEmit": false,
+    "outDir": "./build-integration-test"
+  }
+}
