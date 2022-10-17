@@ -1,7 +1,7 @@
 {
-  "name": "{{npm-package-name}}",
+  "name": "stealthy-scraper",
   "version": "0.0.1",
-  "description": "{{package-slogan}}",
+  "description": "Extra stealthy web scraper in Typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -12,44 +12,40 @@
     "build-unit-tests": "tsc -p ./tsconfig.unit-tests.json",
     "run-unit-tests": "jest",
     "unit-tests": "npm run clean-unit-tests && npm run build-unit-tests && npm run run-unit-tests",
-
     "clean-integration-tests": "rimraf ./build-integration-test",
     "build-integration-tests": "tsc -p ./tsconfig.integration-tests.json",
     "run-integration-tests-ci": "node ./build-integration-test/integrationTests/index.js",
     "run-integration-tests": "env-cmd -e integration-tests node ./build-integration-test/integrationTests/index.js",
     "integration-tests-ci": "npm run clean-integration-tests && npm run build-integration-tests && npm run run-integration-tests-ci",
     "integration-tests": "npm run clean-integration-tests && npm run build-integration-tests && npm run run-integration-tests",
-
     "clean-tests": "npm run clean-unit-tests && npm run clean-integration-tests",
     "build-tests": "npm run build-unit-tests && npm run build-integration-tests",
     "run-tests": "npm run run-unit-tests && npm run run-integration-tests",
     "run-tests-ci": "npm run run-unit-tests && npm run run-integration-tests-ci",
     "tests": "npm run clean-tests && npm run build-tests && npm run run-tests",
     "tests-ci": "npm run clean-tests && npm run build-tests && npm run run-tests-ci",
-
     "lint": "eslint -c .eslintrc.json ./src --ext .ts",
     "lint-errors-only": "eslint -c .eslintrc.json ./src --ext .ts --quiet",
-
     "clean-ts-dist": "rimraf ./dist",
     "build-ts-dist": "npm run clean-ts-dist && tsc -p ./tsconfig.dist.json",
-
     "clean-ts": "rimraf ./build-ts",
     "build-ts": "npm run clean-ts && tsc -p ./tsconfig.all.json",
-
     "clean-examples": "rimraf ./build-examples",
     "build-examples": "tsc -p ./tsconfig.examples.json",
-
     "clean": "npm run clean-unit-tests && npm run clean-integration-tests && npm run clean-ts && npm run clean-ts-dist && npm run clean-examples",
-
     "check": "npm rum lint-errors-only && npm run build-ts && npm run tests && echo Done!"
   },
-  "repository": "https://github.com/{{github-user-name}}/{{package-name}}",
+  "repository": "https://github.com/samhuk/stealthy-scraper",
   "author": "",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
+    "puppeteer": "^19.0.0",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-adblocker": "^2.13.5",
+    "puppeteer-extra-plugin-stealth": "^2.11.1"
   },
   "devDependencies": {
     "@types/jest": "^29.1.2",

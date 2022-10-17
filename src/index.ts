@@ -5,5 +5,5 @@
  * E.g. `import { createPackageName, PackageNameOptions } from 'npm-package-name`
  */
 
-export { createPackageName } from './package-name'
+export { createScraper } from './stealthy-scraper'
 export * from './types'

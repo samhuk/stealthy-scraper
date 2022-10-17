@@ -25,7 +25,7 @@ const tryGetInput = (question, onComplete, validators, defaultIfEmpty) => {
       onComplete(defaultIfEmpty)
     }
     else if (validators != null) {
-      const errMsgList = validators.reduce((acc, validator) => (validator.op(name) ? acc : acc.concat(validator.errorMsg)))
+      const errMsgList = validators.reduce((acc, validator) => (validator.op(name) ? acc : acc.concat(validator.errorMsg)), [])
       if (errMsgList.length === 0) {
         onComplete(name)
       }
@@ -41,11 +41,11 @@ const tryGetInput = (question, onComplete, validators, defaultIfEmpty) => {
 }
 
 const getDashCasePackageName = () => new Promise((res, rej) => {
-  tryGetInput('package-name', res, [], 'example-package')
+  tryGetInput('package-name', res, [VALIDATORS.hasNoSpaces], 'example-package')
 })
 
 const getNpmPackageName = () => new Promise((res, rej) => {
-  tryGetInput('npm-package-name', res, [], 'example-package')
+  tryGetInput('npm-package-name', res, [VALIDATORS.hasNoSpaces], 'example-package')
 })
 
 const getLicenseName = () => new Promise((res, rej) => {
@@ -53,11 +53,11 @@ const getLicenseName = () => new Promise((res, rej) => {
 })
 
 const getLicenseEmail = () => new Promise((res, rej) => {
-  tryGetInput('license-email', res, [], 'joebloggs@email.com')
+  tryGetInput('license-email', res, [VALIDATORS.hasNoSpaces], 'joebloggs@email.com')
 })
 
 const getGithubUserName = () => new Promise((res, rej) => {
-  tryGetInput('github-user-name', res, [], 'joebloggs')
+  tryGetInput('github-user-name', res, [VALIDATORS.hasNoSpaces], 'joebloggs')
 })
 
 const getPackageSlogan = () => new Promise((res, rej) => {
