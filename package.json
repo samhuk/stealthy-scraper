@@ -1,6 +1,6 @@
 {
   "name": "stealthy-scraper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Extra stealthy web scraper in Typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
