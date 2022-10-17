@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="license" />
   </a>
   <a href="https://badge.fury.io/js/stealthy-scraper.svg" target="_blank">
-    <img src="https://badge.fury.io/js/{{npm-package-name}}.svg" alt="npm version" />
+    <img src="https://badge.fury.io/js/stealthy-scraper.svg" alt="npm version" />
   </a>
 </p>
 
