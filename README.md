@@ -24,6 +24,8 @@ stealthy-scraper is a wrapper around [puppeteer-extra](https://github.com/berste
 
 ## Usage Overview
 
+`npm i --save stealthy-scraper`
+
 ```typescript
 import { createScraper } from 'stealthy-scraper'
 const scraper = await createScraper({
