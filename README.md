@@ -18,9 +18,9 @@ stealthy-scraper is a wrapper around [puppeteer-extra](https://github.com/berste
 
 ## Why to use
 
-* puppeteer's `Page.goto` and `Browser.newPage` is being detected. stealthy-scraper has a `newBrowser` function as an alternative way to navigate to a new url which is more reliable.
+* If puppeteer's `Page.goto` and `Browser.newPage` is being detected. stealthy-scraper has a `newBrowser` function as an alternative way to navigate to a new url which is more reliable.
 * If puppeteer's default word typing is being detected. stealthy-scraper has a `safeType` function that better mimicks human typing behavior.
-* When you want to more neatly centralize all of the puppeteer and puppeteer-extra dependencies into one package.
+* When you want to more neatly centralize all of the puppeteer, puppeteer-extra, and puppeteer-extra's plugin dependencies into one package.
 
 ## Usage Overview
 
